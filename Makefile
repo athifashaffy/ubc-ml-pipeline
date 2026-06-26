@@ -2,7 +2,7 @@
 PY := uv run python
 PYTEST := uv run pytest
 
-.PHONY: help setup synthetic run run-multiclass test pdf clean
+.PHONY: help setup synthetic run run-multiclass test clean
 
 help:
 	@echo "Targets:"
@@ -11,7 +11,6 @@ help:
 	@echo "  run            train + evaluate (binary) on data/ (real or synthetic)"
 	@echo "  run-multiclass train + evaluate with the three attack subclasses"
 	@echo "  test           run invariant tests"
-	@echo "  pdf            render report.md to report.pdf"
 	@echo "  clean          remove generated outputs and synthetic data"
 
 setup:
@@ -28,9 +27,6 @@ run-multiclass:
 
 test:
 	$(PYTEST) -q
-
-pdf:
-	uv run --with markdown --with weasyprint python scripts/make_pdf.py
 
 clean:
 	rm -rf outputs/binary outputs/multiclass data/synthetic_web_attacks.csv

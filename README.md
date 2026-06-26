@@ -84,15 +84,8 @@ Each run writes to its `--outdir`:
 
 ## Report
 
-The write-up is `report.md` (also rendered to `report.pdf`, two pages). To
-regenerate the PDF after editing the markdown:
-
-```bash
-make pdf     # uv run --with markdown --with weasyprint python scripts/make_pdf.py
-```
-
-WeasyPrint needs the native cairo/pango libraries: `brew install pango` on
-macOS, or `apt-get install libpango-1.0-0 libpangocairo-1.0-0` on Debian/Ubuntu.
+The write-up is `report.md`, with a typeset version in `report.pdf` (three
+pages). Both carry the same content and the same numbers.
 
 ## Notes on the real file
 
