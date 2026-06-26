@@ -85,7 +85,13 @@ Each run writes to its `--outdir`:
 ## Report
 
 The write-up is `report.md`, with a typeset version in `report.pdf` (three
-pages). Both carry the same content and the same numbers.
+pages). Both carry the same content and the same numbers. The PDF is rendered
+from the markdown with pandoc and a self-contained LaTeX engine:
+
+```bash
+pandoc report.md -o report.pdf --pdf-engine=tectonic -f gfm \
+  -V geometry:margin=2cm -V fontsize=10pt
+```
 
 ## Notes on the real file
 
