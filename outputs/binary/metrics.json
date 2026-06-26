@@ -1,0 +1,105 @@
+{
+  "source_path": "data/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+  "is_synthetic": false,
+  "task": "binary",
+  "n_rows": 164179,
+  "n_features": 68,
+  "class_distribution": {
+    "BENIGN": 162036,
+    "Web Attack - Brute Force": 1470,
+    "Web Attack - XSS": 652,
+    "Web Attack - Sql Injection": 21
+  },
+  "feature_analysis": {
+    "near_zero_variance": [],
+    "n_correlated_pairs_ge_0p95": 68,
+    "top_mutual_information": {
+      "Init_Win_bytes_backward": 0.05657,
+      "Fwd IAT Min": 0.05049,
+      "Fwd Header Length.1": 0.03799,
+      "Fwd Packets/s": 0.03792,
+      "Fwd Header Length": 0.03741,
+      "Flow Packets/s": 0.03737,
+      "Fwd IAT Mean": 0.03623,
+      "Flow IAT Mean": 0.03535,
+      "Flow IAT Std": 0.03508,
+      "Flow IAT Min": 0.0338
+    }
+  },
+  "models": [
+    {
+      "model": "logistic_regression",
+      "task": "binary",
+      "accuracy": 0.9807731351768384,
+      "macro_f1": 0.782273216817418,
+      "weighted_f1": 0.9847364646828772,
+      "per_class": {
+        "0": {
+          "precision": 0.9999160933042457,
+          "recall": 0.9806010985167966,
+          "f1-score": 0.990164411162926,
+          "support": 48611.0
+        },
+        "1": {
+          "precision": 0.40391908975979773,
+          "recall": 0.9937791601866252,
+          "f1-score": 0.5743820224719101,
+          "support": 643.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          47668,
+          943
+        ],
+        [
+          4,
+          639
+        ]
+      ],
+      "confusion_labels": [
+        "benign",
+        "attack"
+      ],
+      "roc_auc": 0.9974951109152856,
+      "pr_auc": 0.7132218679456199
+    },
+    {
+      "model": "random_forest",
+      "task": "binary",
+      "accuracy": 0.999878182482641,
+      "macro_f1": 0.9976290504523726,
+      "weighted_f1": 0.9998779949455752,
+      "per_class": {
+        "0": {
+          "precision": 0.9998971510850561,
+          "recall": 0.999979428524408,
+          "f1-score": 0.9999382881122334,
+          "support": 48611.0
+        },
+        "1": {
+          "precision": 0.9984350547730829,
+          "recall": 0.9922239502332815,
+          "f1-score": 0.9953198127925117,
+          "support": 643.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          48610,
+          1
+        ],
+        [
+          5,
+          638
+        ]
+      ],
+      "confusion_labels": [
+        "benign",
+        "attack"
+      ],
+      "roc_auc": 0.9999995840914733,
+      "pr_auc": 0.9999662427256871
+    }
+  ]
+}

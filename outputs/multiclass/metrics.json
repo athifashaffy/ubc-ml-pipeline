@@ -1,0 +1,161 @@
+{
+  "source_path": "data/Thursday-WorkingHours-Morning-WebAttacks_pcap_ISCX.csv",
+  "is_synthetic": false,
+  "task": "multiclass",
+  "n_rows": 164179,
+  "n_features": 68,
+  "class_distribution": {
+    "BENIGN": 162036,
+    "Web Attack - Brute Force": 1470,
+    "Web Attack - XSS": 652,
+    "Web Attack - Sql Injection": 21
+  },
+  "feature_analysis": {
+    "near_zero_variance": [],
+    "n_correlated_pairs_ge_0p95": 68,
+    "top_mutual_information": {
+      "Init_Win_bytes_backward": 0.05657,
+      "Fwd IAT Min": 0.05049,
+      "Fwd Header Length.1": 0.03799,
+      "Fwd Packets/s": 0.03792,
+      "Fwd Header Length": 0.03741,
+      "Flow Packets/s": 0.03737,
+      "Fwd IAT Mean": 0.03623,
+      "Flow IAT Mean": 0.03535,
+      "Flow IAT Std": 0.03508,
+      "Flow IAT Min": 0.0338
+    }
+  },
+  "models": [
+    {
+      "model": "logistic_regression",
+      "task": "multiclass",
+      "accuracy": 0.9647541316441304,
+      "macro_f1": 0.44282727393127813,
+      "weighted_f1": 0.9774239317013902,
+      "per_class": {
+        "BENIGN": {
+          "precision": 1.0,
+          "recall": 0.9695953590751064,
+          "f1-score": 0.9845630013368984,
+          "support": 48611.0
+        },
+        "Web Attack - Brute Force": {
+          "precision": 0.5393518518518519,
+          "recall": 0.528344671201814,
+          "f1-score": 0.5337915234822451,
+          "support": 441.0
+        },
+        "Web Attack - Sql Injection": {
+          "precision": 0.009389671361502348,
+          "recall": 1.0,
+          "f1-score": 0.018604651162790697,
+          "support": 6.0
+        },
+        "Web Attack - XSS": {
+          "precision": 0.13904761904761906,
+          "recall": 0.7448979591836735,
+          "f1-score": 0.23434991974317818,
+          "support": 196.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          47133,
+          150,
+          611,
+          717
+        ],
+        [
+          0,
+          233,
+          21,
+          187
+        ],
+        [
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          49,
+          1,
+          146
+        ]
+      ],
+      "confusion_labels": [
+        "BENIGN",
+        "Web Attack - Brute Force",
+        "Web Attack - Sql Injection",
+        "Web Attack - XSS"
+      ]
+    },
+    {
+      "model": "random_forest",
+      "task": "multiclass",
+      "accuracy": 0.9955536606163966,
+      "macro_f1": 0.5999753197986146,
+      "weighted_f1": 0.9953535148845863,
+      "per_class": {
+        "BENIGN": {
+          "precision": 0.9997120763409016,
+          "recall": 0.999979428524408,
+          "f1-score": 0.9998457345606006,
+          "support": 48611.0
+        },
+        "Web Attack - Brute Force": {
+          "precision": 0.7478813559322034,
+          "recall": 0.800453514739229,
+          "f1-score": 0.7732749178532311,
+          "support": 441.0
+        },
+        "Web Attack - Sql Injection": {
+          "precision": 0.3333333333333333,
+          "recall": 0.16666666666666666,
+          "f1-score": 0.2222222222222222,
+          "support": 6.0
+        },
+        "Web Attack - XSS": {
+          "precision": 0.45806451612903226,
+          "recall": 0.3622448979591837,
+          "f1-score": 0.4045584045584046,
+          "support": 196.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          48610,
+          0,
+          0,
+          1
+        ],
+        [
+          3,
+          353,
+          2,
+          83
+        ],
+        [
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          8,
+          117,
+          0,
+          71
+        ]
+      ],
+      "confusion_labels": [
+        "BENIGN",
+        "Web Attack - Brute Force",
+        "Web Attack - Sql Injection",
+        "Web Attack - XSS"
+      ]
+    }
+  ]
+}
